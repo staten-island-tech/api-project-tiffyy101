@@ -9,10 +9,10 @@ async function getData(URL) {
     console.log(data.text);
 
     function showText() {
-      data.data.forEach((text) => document.getElementById("response").insertAdjacentHTML(
+      data.data.forEach((fact) => document.getElementById("response").insertAdjacentHTML(
         "beforeend",
             `
-            <h2>${text.text}`
+            <h2>${fact.text}`
       ))
     }
     document.getElementById("response").textContent = data.text;
