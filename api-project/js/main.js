@@ -8,7 +8,7 @@ async function getData(URL) {
     const data = await response.json();
     console.log(data.text);
 
-    function showText() {
+    function facts() {
       data.data.forEach((fact) => document.getElementById("response").insertAdjacentHTML(
         "beforeend",
             `
