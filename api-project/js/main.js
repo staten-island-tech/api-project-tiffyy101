@@ -1,18 +1,18 @@
 import '/styles/style.css'
 
-const URL = "https://cat-fact.herokuapp.com/facts";
+const URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken";
 
 async function getData(URL) {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    console.log(data.text);
+    console.log(data.meals.strMeal);
 
-    function facts() {
-      data.data.forEach((fact) => document.getElementById("response").insertAdjacentHTML(
-        "beforeend",
+    function showFood() {
+      data.data.forEach((food) => document.getElementById("response").insertAdjacentHTML(
+        "afterbegin",
             `
-            <h2>${fact.text}`
+            <h2>${food.meals.strMeal}</h2>`
       ))
     }
     document.getElementById("response").textContent = data.text;
