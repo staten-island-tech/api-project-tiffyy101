@@ -9,12 +9,17 @@ async function getData(URL) {
     console.log(data.meals.strMeal);
 
     function showFood() {
-      data.data.forEach((food) => document.getElementById("response").insertAdjacentHTML(
+      data.meals.forEach((food) => document.getElementById("response").insertAdjacentHTML(
         "afterbegin",
             `
-            <h2>${food.meals.strMeal}</h2>`
+            <h2>cook ${food.meals.strMeal}</h2>
+            <p>${food.meals.strIntrusctions}</p>`
       ))
     }
+
+data.meals
+.forEach((food) => showFood(food));
+
     document.getElementById("response").textContent = data.text;
   } catch (error) {
     console.log(error);
