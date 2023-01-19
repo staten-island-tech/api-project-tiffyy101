@@ -1,6 +1,6 @@
 import '/styles/style.css'
 
-const URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken";
+const URL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 async function getData(URL) {
   try {
