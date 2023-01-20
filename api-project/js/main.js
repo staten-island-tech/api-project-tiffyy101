@@ -7,8 +7,12 @@ async function getData(URL) {
     const response = await fetch(URL);
     const data = await response.json();
     console.log(data.meals.strMeal);
+    document.getElementById("response").textContent = data.meals.strMeal;
+  } catch (error) {
+    console.log(error);
+  }
 
-    function showFood() {
+/*     function showFood() {
       data.meals.forEach((food) => document.getElementById("response").insertAdjacentHTML(
         "afterbegin",
             `
@@ -18,11 +22,8 @@ async function getData(URL) {
     }
 
 data.meals
-.forEach((food) => showFood(food));
+.forEach((food) => showFood(food)); */
 
-    document.getElementById("response").textContent = data.text;
-  } catch (error) {
-    console.log(error);
-  }
+
 }
 getData(URL);
