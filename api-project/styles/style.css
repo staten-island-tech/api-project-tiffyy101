@@ -1,0 +1,61 @@
+:root {
+    --h1: 3.052rem;
+    --h2: 2.441rem;
+    --h3: 1.953rem;
+    --h4: 1.563rem;
+    --h5: 1rem;
+  }
+  
+  .warm {
+    --black: #000;
+    --light-red: rgb(250, 171, 171);
+    --dull-pink: #971432;
+    --dark-red: rgb(116, 1, 1);
+  
+    --first: var(--black);
+    --second: var(--dark-red);
+    --third: var(--light-red);
+    --fourth: var(--dull-pink);
+  }
+  
+  .cool {
+    --black: #000;
+    --purple: rgb(106, 48, 151);
+    --light-blue: rgb(181, 195, 225);
+    --dark-blue: rgb(0, 15, 87);
+  
+    --first: var(--black);
+    --second: var(--dark-blue);
+    --third: var(--light-blue);
+    --fourth: var(--purple);
+  }
+  
+  head,
+  body,
+  * {
+    font-family: 'Mali', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osz-font-smoothing: grayscale;
+    text-align: center;
+    border-radius: 30px;
+    background-color: var(--third);
+  
+  }
+
+  h1 {
+    color: var(--second);
+    font-size: var(--h1);
+  }
+  
+  .btn {
+    color: var(--second);
+    font-size: var(--h4);
+    border-color: var(--fourth);
+    border-spacing: 10px;
+  }
+
+  .btnTheme {
+    color: var(--second);
+    font-size: var(--h4);
+    border-color: var(--fourth);
+}

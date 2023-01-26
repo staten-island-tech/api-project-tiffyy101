@@ -5,16 +5,32 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
   <title>Fetch API</title>
 </head>
 
-<body>
-  <div id="app"></div>
-  <h1>Things You Should Do Today</h1>
-  <button class="btn" id="btn">Click Here</button>
-  <div id="results"></div>
-  <div id="error"></div>
-  <h2 id="response"></h2>
+<body class="warm">
+  <div>
+    <h1>Dungeons and Dragons</h1>
+  </div>
+
+  <div class="theme" id="theme">
+    <button class="btnTheme" id="btnTheme">Change Theme</button>
+  </div>
+
+  <section class="btns" id="btns">
+    <button class="btn" id="btn"> Chaotic Evil</button>
+    <button class="btn" id="btn"> Neutral</button>
+    <button class="btn" id="btn"> Lawful Good</button>
+  </section>
+
+  <div class="result" id="result">
+
+  </div>
+
   <script type="module" src="./js/main.js"></script>
 </body>
 

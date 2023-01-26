@@ -1,7 +1,8 @@
 import '/styles/style.css'
 
 const DOMSelectors = {
-  search: document.getElementById("search"),
+  btnTheme: document.getElementById("btnTheme"),
+  btns: document.getElementById("btns"),
   input: document.getElementById("input"),
   btn: document.getElementById("btn"),
   result: document.getElementById("result")
@@ -12,10 +13,11 @@ const URL = "https://api.open5e.com/monsters/?search";
 async function getData(URL) {
   try {
     const response = await fetch(URL);
+    if (response.status < 200 || response.status > 299) {
+      throw new error(response);
+    } else {
     const data = await response.json();
-    console.log(data);
     data.data.forEach((a) => {
-      console.log(a.results.name, a.results.alignment, a.results.skills);
       DOMSelectors.result.insertAdjacentHTML(
         "beforeend",
         `<div class="character">
@@ -26,17 +28,21 @@ async function getData(URL) {
         `
       );
     });
+  };
+
   }catch (error) {
     console.log(error);
   }
 }
 getData(URL);
 
-async function searchAPI() {
-  try {
-    DOMSelectors.btn.addEventListener("submit", function clearInput(){
-      DOMSelectors.content = "";
-    });
-  }catch (error) {}
-}
-searchAPI();
+
+document.querySelector(".btnTheme").addEventListener("click", function () {
+  if(document.body.classList.contains("warm")) {
+      document.body.classList.add("cool");
+      document.body.classList.remove("warm");
+  } else {
+      document.body.classList.add("warm");
+      document.body.classList.remove("cool");
+  }
+});
