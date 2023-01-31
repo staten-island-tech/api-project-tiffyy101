@@ -9,7 +9,8 @@ const DOMSelectors = {
   allCharacters: document.getElementById("allCharacters"),
   chaoticEvil: document.getElementById("chaoticEvil"),
   neutral: document.getElementById("neutral"),
-  lawfulGood: document.getElementById("lawfulGood")
+  lawfulGood: document.getElementById("lawfulGood"),
+  mainDiv: document.getElementById("main")
 };
 
 const URL = "https://api.open5e.com/monsters";
@@ -23,19 +24,34 @@ async function getData(URL) {
     const data = await response.json();
 
     function allCharacters(results) {
-      DOMSelectors.display.innerHTML = "";
       results.data
       .forEach((character) => {
-        card(character);
+        DOMSelectors.display.innerHTML = " ";
+        DOMSelectors.mainDiv.insertAdjacentHTML
+        ("beforeend",
+                `
+              <h2>${character.results.name}</h2>
+              <h3>${character.results.alignment}`)
     });
   }
     
+/*   const chaoticEvil = document.getElementById("chaoticEvil");
+  chaoticEvil.addEventListener("click", function () {
+      DOMSelectors.display.innerHTML = " ";
+      menu.filter((chaoticEvil) => chaoticEvil.results.alignment === "yes")
+      .forEach(bestSeller => {
+          DOMSelectors.mainDiv.insertAdjacentHTML */
+
     function chaoticEvil(results) {
       DOMSelectors.display.innerHTML = "";
       results.data
-      .filter((character) => character.results.alignment === "chaotic")
+      .filter((character) => character.results.alignment === "chaotic evil")
       .forEach((character) => {
-        card(character);
+        DOMSelectors.mainDiv.insertAdjacentHTML
+        ("beforeend",
+                `
+              <h2>${character.results.name}</h2>
+              <h3>${character.results.alignment}`)
       });
     }  
     
@@ -44,7 +60,11 @@ async function getData(URL) {
       results.data
       .filter((character) => character.results.alignment === "neutral")
       .forEach((character) => {
-        card(character);
+        DOMSelectors.mainDiv.insertAdjacentHTML
+        ("beforeend",
+                `
+              <h2>${character.results.name}</h2>
+              <h3>${character.results.alignment}`)
       });
     }
 
@@ -53,7 +73,11 @@ async function getData(URL) {
       results.data
       .filter((character) => character.results.alignment === "lawful good")
       .forEach((character) => {
-        card(character);
+        DOMSelectors.mainDiv.insertAdjacentHTML
+        ("beforeend",
+                `
+              <h2>${character.results.name}</h2>
+              <h3>${character.results.alignment}`)
       });
     }
 
@@ -81,21 +105,6 @@ async function getData(URL) {
   }
 }
 getData(URL);
-
-function card(character) {
-  DOMSelectors.display.insertAdjacentHTML(
-    "beforeend",
-    `<div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2 class="display-name"> ${character.results.name} </h2>
-            <h3 class="display-alignment"> Vision: ${character.results.alignment} </h3>
-            <h3 class="display-weapon"> Weapons: ${character.weapon} </h3>
-        </div>
-      </div>
-    </div>`
-  );
-} 
 
 document.querySelector(".btnTheme").addEventListener("click", function () {
   if(document.body.classList.contains("warm")) {
