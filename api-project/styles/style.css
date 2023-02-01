@@ -59,3 +59,10 @@
     font-size: var(--h4);
     border-color: var(--fourth);
 }
+
+.choose {
+  color: var(--second);
+  font-size: var(--h5);
+  border-color: var(--fourth);
+  border-spacing: 5px;
+}
