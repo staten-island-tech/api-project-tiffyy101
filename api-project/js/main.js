@@ -25,6 +25,7 @@ async function getData(characters) {
  
 
       function all() {
+        DOMSelectors.display.innerHTML=" ";
         data.forEach((data) => {
           DOMSelectors.display.insertAdjacentHTML
             ("beforeend",
@@ -40,8 +41,10 @@ async function getData(characters) {
       }
 
       function sword() {
+        DOMSelectors.display.innerHTML=" ";
         data.filter((results) => results.weapon === "sword")
           .forEach(results => {
+
             DOMSelectors.display.insertAdjacentHTML              
             ("beforeend",
                 `
@@ -55,8 +58,10 @@ async function getData(characters) {
       }
 
       function claymore() {
+        DOMSelectors.display.innerHTML=" ";
         data.filter((results) => results.weapon === "claymore")
           .forEach(results => {
+            DOMSelectors.display.innerHTML=" ";
             DOMSelectors.display.insertAdjacentHTML              
             ("beforeend",
                 `
@@ -72,6 +77,7 @@ async function getData(characters) {
       function bow() {
         data.filter((results) => results.weapon === "bow")
           .forEach(results => {
+            DOMSelectors.display.innerHTML=" ";
             DOMSelectors.display.insertAdjacentHTML              
             ("beforeend",
                 `
